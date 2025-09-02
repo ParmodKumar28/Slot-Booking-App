@@ -10,6 +10,8 @@ import {
 } from "./utils/validation.js";
 import firebaseServiceAccount from "./config/firebase.js";
 
+process.env.TZ = process.env.APP_TIMEZONE || process.env.TZ || 'UTC';
+
 // Module setup
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = dirname(__filename);
