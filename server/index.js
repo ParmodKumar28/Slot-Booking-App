@@ -3,18 +3,16 @@ import cors from "cors";
 import admin from "firebase-admin";
 import moment from "moment";
 import dotenv from "dotenv";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
-import { readFileSync } from "fs";
 import {
   validateBookingRequest,
   validateDateParam,
   validateEmailParam,
 } from "./utils/validation.js";
+import firebaseServiceAccount from "./config/firebase.js";
 
 // Module setup
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 
 // Loading environment variables
 dotenv.config();
@@ -27,14 +25,13 @@ app.use(cors());
 app.use(express.json());
 
 // Initialize Firebase Admin
-const serviceAccountPath = join(
-  __dirname,
-  "config/firebase-service-account.json"
-);
-const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, "utf8"));
-
+// const serviceAccountPath = join(
+//   __dirname,
+//   "config/firebase-service-account.json"
+// );
+// const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, "utf8"));
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(firebaseServiceAccount),
 });
 
 const db = admin.firestore();
