@@ -1,0 +1,31 @@
+{
+    "name": "slot-booking-app",
+    "version": "1.0.0",
+    "description": "30-Minute Slot Booking Web Application",
+    "private": true,
+    "scripts": {
+        "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd server && npm run dev",
+        "client": "cd client && npm start",
+        "build": "cd client && npm run build",
+        "start:server": "cd server && npm start",
+        "start:client": "cd client && npm start"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.0"
+    },
+    "workspaces": [
+        "server",
+        "client"
+    ],
+    "keywords": [
+        "slot-booking",
+        "react",
+        "nodejs",
+        "express",
+        "firestore"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
+}
