@@ -3,7 +3,7 @@ import './BookingList.css';
 
 const BookingList = ({ userBookings, hasBookings, showBookings, onToggleBookings, userEmail }) => {
     const renderBookingItem = (booking) => (
-        <div key={booking.id} className="slot-item booked">
+        <div key={booking.id} className="slot-item yours">
             <div className="slot-time">{booking.displayTime}</div>
             <div className="slot-status">{booking.displayDate}</div>
         </div>
