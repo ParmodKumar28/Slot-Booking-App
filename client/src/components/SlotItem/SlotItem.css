@@ -1,0 +1,61 @@
+.slot-item {
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slot-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.slot-item.available {
+  background-color: #d5f4e6;
+  border-color: #27ae60;
+  color: #27ae60;
+}
+
+.slot-item.available:hover {
+  background-color: #27ae60;
+  color: white;
+}
+
+.slot-item.booked {
+  background-color: #fadbd8;
+  border-color: #e74c3c;
+  color: #e74c3c;
+  cursor: not-allowed;
+}
+
+.slot-item.past {
+  background-color: #f8f9fa;
+  border-color: #95a5a6;
+  color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.slot-item.yours {
+  background-color: #d6eaf8;
+  border-color: #3498db;
+  color: #3498db;
+  cursor: not-allowed;
+}
+
+.slot-time {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.slot-status {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
